@@ -1,0 +1,213 @@
+\documentclass{article}
+%\usepackage{polski} %to replace latex keywords in the document to Polish
+\usepackage[utf8]{inputenc} %sets input encoding to UTF-8, needed for Polish, Japanese, etc.
+\usepackage[T1]{fontenc} %needed for Polish characters
+\usepackage{lmodern} %this font handles Polish characters properly
+\usepackage[cm]{fullpage} %very small margins (around 1.5cm)
+\usepackage{multicol} %use \begin{multicols}{#} for # columns
+\usepackage{amssymb} %big bracets and other useful symbols
+\usepackage{amsmath} %some mathematical symbols
+\usepackage{enumitem} %remove vertical space in itemize with: [noitemsep,nolistsep]
+\usepackage{url} %use \url{} in the document
+%\usepackage{tipa} % \textpolhook{a}
+
+\newcommand{\nodata}{\emph{no data yet}}
+\newcommand{\samplecustom}[2]{X_{#1}, \ldots, X_{#2}}
+\newcommand{\sample}{\samplecustom{1}{n}}
+
+\newcommand{\distbernoulli}{\textrm{Bern}}
+\newcommand{\distbinomial}{\textrm{Bin}}
+\newcommand{\distpoisson}{\textrm{Pois}}
+\newcommand{\distgeometric}{\textrm{G}}
+\newcommand{\disthypergeometric}{\textrm{Hy}}
+\newcommand{\distuniform}{\textrm{U}}
+\newcommand{\distnormal}{\textrm{N}}
+\newcommand{\distexponential}{\textrm{Exp}}
+\newcommand{\distgamma}{\Gamma}
+\newcommand{\distchisquare}{\chi^2}
+\newcommand{\diststudentt}{\textrm{t}}
+\newcommand{\distf}{\textrm{F}}
+
+\newcommand{\param}{\theta}
+\newcommand{\estim}{\hat{\theta}}
+\newcommand{\limit}[2]{\underset{#1 \rightarrow #2}{\lim}}
+\newcommand{\mean}{\overline{X}}
+\newcommand{\quantile}[2]{\textrm{#1-quantile}_{#2}}
+\newcommand{\qquantile}[1]{\quantile{q}{#1}}
+\newcommand{\qqquantile}[1]{\textrm{quantile}_{#1}}
+\newcommand{\med}{\textrm{MED}}
+\newcommand{\mad}{\textrm{MAD}}
+\newcommand{\var}{\textrm{Var}}
+\newcommand{\statspace}{\left( \mathcal{H}, \mathcal{A}, \mathcal{P} = \left\{ p_\theta : \theta \in \Theta \right\} \right)}
+
+\begin{document}
+
+\title{Theory and formulas for \emph{Computer Statistics} course on MiNI on WUT}
+\date{\today}
+\author{Mateusz Bysiek, Computer Science, MiNI, WUT}
+\maketitle
+
+%\pagebreak[4]
+
+\tableofcontents
+
+\newpage
+
+\section{Theory}
+
+\subsection{Review of probability theory}
+
+\subsubsection{Review of basic probability distributions}
+\begin{multicols}{2}
+\input{cs_1_probability}
+\end{multicols}
+
+\newpage
+
+\subsection{Descriptive statistics}
+
+\subsubsection{Basic notions}
+\input{cs_2a_basics}
+
+\newpage
+
+\begin{multicols}{2}
+
+\subsubsection{Measures of location: central tendency}
+\input{cs_2b_measures_central}
+
+\vfill
+\columnbreak
+
+\subsubsection{Measures of location: position}
+\input{cs_2c_measures_position}
+
+\subsubsection{Measures of dispersion}
+\input{cs_2d_measures_dispersion}
+
+\subsubsection{Measures of shape}
+\input{cs_2e_measures_shape}
+
+\end{multicols}
+
+\newpage
+
+\subsection{Inferential statistics}
+
+\subsubsection{Basics, more on probability distributions}
+
+\begin{multicols}{2}
+\input{cs_3_probability_adv}
+\end{multicols}
+
+\newpage
+
+\subsubsection{Point estimation}
+
+\begin{multicols}{2}
+\input{cs_4_estim_point}
+\end{multicols}
+
+\newpage
+
+\subsubsection{Interval estimation}
+
+\begin{multicols}{2}
+\input{cs_5a_estim_interval}
+\end{multicols}
+
+\subsubsection{Selected confidence intervals}
+
+\begin{multicols}{3}
+\input{cs_5b_estim_interval_example}
+\end{multicols}
+
+\subsubsection{Planning experiments}
+
+\begin{multicols}{2}
+\input{cs_6_planning}
+\end{multicols}
+
+\newpage
+
+\subsubsection{Hypothesis testing}
+
+\begin{multicols}{2}
+\input{cs_7a_tests}
+\end{multicols}
+
+\newpage
+
+\subsubsection{Selected parametric tests}
+
+\begin{multicols}{2}
+\input{cs_7b_tests_parametric_example}
+\end{multicols}
+
+\newpage
+
+\subsubsection{Advanced hypothesis testing}
+
+\begin{multicols}{2}
+\input{cs_7c_tests_adv}
+\end{multicols}
+
+\subsubsection{Selected non-parametric tests}
+
+\begin{multicols}{2}
+\input{cs_7d_tests_nonparam_example}
+\end{multicols}
+
+\newpage
+
+\subsubsection{Linear regression}
+
+\begin{multicols}{2}
+\input{cs_8_regression}
+\end{multicols}
+
+\newpage
+
+\hspace{0pt}
+
+\newpage
+
+\thispagestyle{empty}
+
+\section{Formulas for the exam}
+
+\section*{Formulas: confidence intervals}
+\begin{multicols}{3}
+\input{cs_5b_estim_interval_example}
+\end{multicols}
+
+\section*{Formulas: non-parametric tests}
+\begin{multicols}{2}
+\input{cs_7d_tests_nonparam_example}
+\end{multicols}
+
+\newpage
+
+\thispagestyle{empty}
+
+\section*{Formulas: parametric tests}
+\begin{multicols}{2}
+\input{cs_7b_tests_parametric_example}
+\end{multicols}
+
+\newpage
+
+\section{Sources, references}
+
+If you find any mistakes, please send message to \url{bysiekm {at} student.mini.pw.edu.pl}
+
+\vspace{10pt} \noindent Thanks to\ldots
+\begin{itemize}
+  \item P. Grzegorzewski and M. Gągolewski, for this whole theory and formulas
+  \item group AP, for many of the formulas
+  \item Karo, for notes
+  \item lots of other people, for suggestions, corrections, etc.
+  \item Wikipedia
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,60 @@
+\paragraph{Mean} \hspace{0pt}
+
+\vspace{-20pt}
+\begin{gather*}
+\mean = \frac{1}{n}\sum_{i=1}^n X_i
+\end{gather*}
+
+\paragraph{Mean for grouped data} \hspace{0pt}
+
+\vspace{-5pt}
+\begin{gather*}
+\mean = \frac{1}{n}\sum_{i=1}^n n_i x_i
+\end{gather*}
+
+where $n_i$ is count of $i$th result values, and $x_i$ is the $i$th result value.
+
+%\paragraph{Weighted mean} \nodata
+
+\paragraph{Median} \hspace{0pt}
+
+\vspace{-20pt}
+\begin{gather*}
+\med = \frac{1}{2} \left( X_{\lfloor \frac{n+1}{2} \rfloor : n} + X_{\lceil \frac{n+1}{2} \rceil : n} \right) =\\ 
+= \begin{cases}
+ X_{\frac{n+1}{2} : n} \mbox{ if } n \mbox{ is odd} \\
+ \frac{1}{2} \left( X_{\frac{n}{2} : n} + X_{\frac{n+2}{2} : n} \right) \mbox{ if } n \mbox{ is even}
+\end{cases}
+\end{gather*}
+
+where $x_{k:n}$ is the $k$th sample element taken from sorted sample.
+
+\paragraph{Weighted median}
+\begin{gather*}
+\med = X_{\med}^L + \frac{b}{n_{\med}} \left( \frac{n}{2} - \sum_{i=1}^{i_{\med}-1} n_i \right)
+\end{gather*}
+
+\paragraph{Mode}
+is an observation that appears most often.
+
+\paragraph{Trimmed mean} \hspace{0pt}
+
+\vspace{-5pt}
+\begin{gather*}
+\mean_{t,k} = \frac{1}{n - 2k} \sum_{i=k+1}^{n-k} X_i
+\end{gather*}
+
+\paragraph{Winsorized mean}
+is thought to decrease the effect of outliers.
+\begin{gather*}
+\mean_{w,k} = \frac{1}{n} \left[ (k+1)X_{k+1} + \sum_{i=k+2}^{n-k-1} + (k+1)X_{n-k} \right]
+\end{gather*}
+
+\paragraph{Geometrical mean}
+
+\[ \mean_g = \sqrt[n]{x_1 x_2 \ldots x_n} \]
+
+\paragraph{Harmonic mean} \hspace{0pt}
+
+\vspace{-10pt}
+\[ \mean_h = \frac{1}{ \frac{1}{n} \sum_{i=1}^n \frac{1}{X_i} } \]

@@ -1,0 +1,135 @@
+\paragraph{Estimator} $\estim$ is a function that estimates value of an unknown parameter $\param$.
+
+\paragraph{Bias of an estimator}
+$ b(\estim) = $
+
+$ = \mathbb{E}(\estim(\sample)-\param) = \mathbb{E}(\estim)-\param $
+\begin{equation*}
+b(\estim) = \begin{cases}
+\left.\begin{aligned}
+   > 0 \rightarrow \mbox{overestimation} \hspace{7pt} \\
+   < 0 \rightarrow \mbox{underestimation} 
+\end{aligned}
+\right\} \mbox{ systematic error} \\
+\hspace{3pt} = 0 \rightarrow \mbox{no systematic error} 
+\end{cases}
+\end{equation*}
+
+\paragraph{Unbiased estimator}
+$ \mathbb{E} \hat\theta(X_1, \ldots, X_n) = \theta $
+
+\paragraph{Asymptotically unbiased estimator}
+is an estimator that is unbiased when sample size tends to infinity.
+
+$ \underset{n \rightarrow \infty}{\lim} b(\hat{\theta}(X_1, \ldots, X_n)) = 0 $
+
+\paragraph{Mean squared error}
+\[ MSE(\hat{\theta}) = \mathbb{E}(\hat{\theta}-\theta)^2 
+= Var(\hat{\theta})+b^2(\hat{\theta}) \]
+
+\paragraph{Regular model} is a stat. space $ \statspace $ that satisfies the following conditions:
+
+\begin{itemize}[noitemsep,nolistsep]
+  \item support of $p_\theta$ does not depend on $\theta$; 
+  
+  support of $ p_\theta(x) = \left\{ x: p_\theta(x) > 0 \right\} $
+  
+  \item $ 0 < \mathbb{E} \left[ \frac{\partial}{\partial\theta} \ln p_\theta(x) \right]^2 < \infty $
+\end{itemize}
+
+\paragraph{Fisher's information contained in a single observation}
+\[ I(\theta) = \mathbb{E} \left[ \frac{\partial}{\partial\theta} \ln p_\theta(x) \right]^2  \]
+
+\paragraph{Fisher's information contained in a sample}
+\[ I_n(\theta) = \mathbb{E} \left[ \frac{\partial}{\partial\theta} \ln p_\theta(x_1,\ldots,x_n) \right]^2  \]
+
+\paragraph{Cramer-Rao inequality}
+$X = X_1,\ldots,X_n$ is from regular model. Let $T$ denote
+an unbiased estimator of a function $g(\theta)$, then:
+\[ Var T(X) \geq \frac{\left( g'( \theta ) \right)^2}{n I(\theta)} \]
+
+\paragraph{Fisher's information inequality}
+states that if $\theta$ is an unbiased estimator, then:
+\[ Var\hat\theta(X) \geq \frac{1}{n I(\theta)} \]
+
+\paragraph{Efficiency of an estimator}
+\[ eff(\hat\theta) = \frac{1}{Var(\hat\theta) n I(\theta)} \]
+and $0 < eff(\hat\theta) \leq 1$
+
+\paragraph{Most efficient estimator}
+has $eff(\hat\theta) = 1$
+
+\paragraph{Asymptotically efficient estimator}
+is not efficient but $\underset{n \rightarrow \infty}{\lim} eff(\hat{\theta}(\sample)) = 1 $
+
+\paragraph{Relative efficiency}
+\[ \frac{eff(\estim_1)}{eff(\estim_2)} = \frac{Var(\estim_2)}{Var(\estim_1)} \]
+
+\paragraph{Consistency of an estimator}
+is preserved, if, $\forall \mathcal{E} > 0$ for a given estimator $\hat{\theta}$ the following holds:
+
+\[ \limit{n}{\infty}
+ P \left( \left| \estim(\sample) - \theta \right| < \mathcal{E} \right) = 1 \]
+
+Also, if $\estim$ is unbiased estimator of $\param$
+and if $ \limit{n}{\infty} Var(\estim(\sample)) = 0 $ then $\estim$ is consistent.
+
+\paragraph{Differentiation of estimators}
+by the method of construction:
+
+\begin{enumerate}[noitemsep,nolistsep]
+  \item method-of-moments estimator: MME
+  
+  \item maximal-likelihood estimator: MLE
+  
+  \item minimum-variance unbiased estimator MVUE
+  
+  \item method-of-quantiles estimator MQE
+\end{enumerate}
+
+\paragraph{MME}
+- method of moments.
+
+$ \param = g(\mathbb{E}X, \mathbb{E}X^2, \ldots, \mathbb{E}X^r) $
+
+$ \estim = g(\mu_1,\mu_2,\ldots,\mu_r) $
+
+where $\mu_k = \frac{1}{n} \sum_{i=1}^n X_i^k$ e.g. $\mu_1 = \bar{X}$
+
+\paragraph{MLE}
+- method of maximal likelihood.
+
+We use likelihood function: $L = L(\param, \sample) = $
+\[ = \begin{cases}
+P_\theta(X_1 = x_1, \ldots, X_n = x_n) \mbox{ for discrete distr.} \\
+f_\theta(x_1, \ldots, x_n) \mbox{ for cont.}
+\end{cases} \]
+
+$ \estim = \arg \max L(\param) $
+
+If $\estim$ denotes a M.L.E. of $\param$ in the regular model, then
+
+\[ \left( \estim(\sample) - \theta \right) \sqrt{n}
+ \underset{n \rightarrow \infty}{\sim}  \distnormal\left( 0, \frac{1}{\sqrt{I(\param)}} \right) \]
+
+and for large $n$:
+
+\[ \estim \sim \distnormal\left( 0, \frac{1}{\sqrt{n I(\param)}} \right) \]
+
+% \paragraph{Uniform distribution estimators}
+% for $\theta$ in $U([0,\theta])$ are:
+% \begin{align*}
+% \textrm{MME: } & \hat{\theta}_1 = 2\bar{X} \\ 
+% \textrm{MLE: } & \hat{\theta}_2 = X_{n:n} \\ 
+% \textrm{MVUE: } & \hat{\theta}_3 = \frac{n+1}{n}X_{n:n} = \frac{n+1}{n}\hat{\theta}_2 \\ 
+% %\textrm{MQE: } & ?
+% \end{align*}
+
+% \subsubsection{Normal distribution}
+% \begin{align*}
+% \textrm{MME: } & \\ 
+% \textrm{MLE: } & \\ 
+% \textrm{MVUE: } & \\ 
+% \textrm{MQE: } & 
+% \end{align*}
+

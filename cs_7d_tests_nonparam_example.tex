@@ -1,0 +1,40 @@
+\paragraph{\underline{Hypothesis tests for goodness-of-fit}} \hspace{0pt}
+
+\vspace{10pt} \noindent \textbf{\em Pearson chi-square test}
+$X$ i.i.d. $F=?$, $F_0$ is dist. of interest, $H_0: F=F_0$
+
+$d_i= \frac{N_i - np_i}{\sqrt{np_i}}$,
+$p_i = P_{F_0}(X \in S_i) > 0$
+
+\[ T = \Sigma_{i=1}^r d_i^2 \rightarrow_{n \rightarrow \infty} \chi^2_{r-1-t} \]
+
+\vspace{10pt} \noindent \textbf{\em Kolmogorov test} assumes that the sample comes from a continuous distribution.
+
+\[ T = \sup_{x \in \mathbb{R}}{ \left| \hat{F}_n(x) - F_0(x) \right| } \]
+
+\[ T^+ = \max_{i}{ \left( \frac{i}{n} - \hat{F}_0(x_{i:n}) \right) } \]
+
+\[ T^- = \max_{i}{ \left( \hat{F}_0(x_{i:n}) - \frac{i-1}{n} \right) } \]
+
+where $i \in \mathbb{N}$, $i \in [1,n]$ and $x_{i:n}$ is the $i$th sample element taken from sorted sample
+
+\[ T = \max{ \left\{ T^+, T^- \right\} } \]
+
+\paragraph{\underline{Hypothesis tests for normality}} \hspace{0pt}
+
+\vspace{10pt} \noindent \textbf{\em Shapiro-Wilk test}
+\begin{gather*}
+W = \frac{ \left( \sum_{i=1}^{n} a_i x_{i:n} \right)^2 }{ \sum_{i=1}^{n} \left( x_i - \bar{x} \right)^2 } \\
+a_i = \frac{m^T V^{-1}}{ \sqrt{ m^T V^{-1} V^{-1} m } }
+\end{gather*}
+
+where $m$ is a vector of expected values of sorted sample from $\distnormal(0,1)$, and $V$ is a covariance matrix of $m$.
+
+Null hypothesis is rejected when $W$ is too small. This test is designed for small sample sizes, $n < 50$. 
+
+\paragraph{\underline{Hypothesis tests for independence}} \hspace{0pt}
+
+\vspace{10pt} \noindent \textbf{\em Wilcoxon signed-rank test}
+\begin{gather*}
+W = \frac{1}{2}\Sigma_{i=1}^n \bar{r}(Z_i)+\frac{n(n + 1)}{4}
+\end{gather*}

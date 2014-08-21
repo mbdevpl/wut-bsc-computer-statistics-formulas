@@ -1,0 +1,138 @@
+\paragraph{Statistical test}
+for testing hypothesis $H$ against $K$, defined on sample $\sample$, is a function:
+\begin{gather*}
+\psi: \mathcal{H} \rightarrow \{0, 1\}
+\end{gather*}
+where $\psi = 1$ means that we reject $H$ (i.e. we accept $K$) and $\psi = 0$ means that we do not reject $H$.
+
+Usually, $\psi$ has the following form:
+\begin{gather*}
+\psi(\sample) = 
+\begin{cases}
+1 \mbox{ if } T(\sample) \in \mathcal{K}_\alpha \\
+0 \mbox{ if } T(\sample) \not\in \mathcal{K}_\alpha
+\end{cases}
+\end{gather*}
+where $T$ is a test statistic, and $\mathcal{K}_\alpha$ is a critical region.
+
+\paragraph{Null hypothesis}
+is usually denoted by $H$, and it is a hypothesis that we test. In most of the cases it is some
+phenomenon about which we are not sure whether it really happens, and we perform a test in order to
+determine the reality.
+
+\paragraph{Alternative hypothesis}
+is usually denoted by $K$, and it is a hypothesis opposite to the null hypothesis.
+
+\paragraph{Critical region}
+is a set of all outcomes of a test, for which we reject the null hypothesis. Denoted by $\mathcal{K}_\alpha$.
+
+\paragraph{Type I error}
+is made when $H$ is rejected when in fact it is true. Probability of this error is denoted by $\alpha_\psi$.
+
+\paragraph{Type II error}
+is made when $H$ is not rejected when in fact it is false. Probability of this error is denoted by $\beta_\psi$.
+
+\paragraph{Significance level}
+denoted with $\alpha$ is the upper bound for probability of making type I error. It is fixed in
+advance.
+\begin{gather*}
+\begin{cases}
+\alpha_\psi \leq \alpha \\
+\beta_\psi \rightarrow \min
+\end{cases} \equiv 
+\begin{cases}
+P(\psi = 1 | H) \leq \alpha \\
+P(\psi = 0 | K) \rightarrow \min
+\end{cases}
+\end{gather*}
+
+``Significance'' in statistics does not have the usual everyday meaning.
+
+\paragraph{Power of a test}
+is a probability of rejecting false hypothesis.
+\begin{gather*}
+\Pi = P(\psi = 1 | K) = 1 - P(\psi = 0 | K) = 1 - \beta_\psi
+\end{gather*}
+
+\paragraph{Uniformly most powerful test}
+(or U.M.P.T.) is such test $\psi^*$, defined for hypothesis $H: \theta \in \Theta_H$ against $K: \theta \in
+\Theta_K$, on the significance level $\alpha$, that satisfies the following:
+\begin{gather*}
+\forall \theta \in \Theta_K : \mathbb{E}_\theta \psi^*(X) \geq \mathbb{E}_\theta \psi(X)
+\end{gather*}
+
+\paragraph{Neyman-Pearson Lemma}
+states, that if we consider a testing problem $H: f_0$ against $K: f_1$, defined as follows:
+
+Let $\alpha \in (0,1)$ and let $\psi$ denote a test that:
+\begin{gather*}
+\psi(X) = \begin{cases}
+1 \mbox{ if } f_1(X) > k f_0(X) \\
+0 \mbox{ if } f_1(X) < k f_0(X)
+\end{cases}
+\label{eq:neymanpearson1} \tag{A}
+\end{gather*}
+
+where $k$ is a constant, $k > 0$, and it satisfies:
+\begin{gather*}
+\mathbb{E}_{f_0} \psi(X) = \alpha
+\label{eq:neymanpearson2} \tag{B}
+\end{gather*}
+
+\noindent \ldots then we may conclude the following:
+\begin{enumerate}
+
+  \item Test $\psi$ satisfying \eqref{eq:neymanpearson1} and \eqref{eq:neymanpearson2} is the
+  U.M.P.T. for $H$ against $K$ on the significance level $\alpha$.
+
+  \item If $\alpha$ is the U.M.P.T. for $H$ against $K$ on the significance level $\alpha$, the test
+  $\psi$ should satisfy \eqref{eq:neymanpearson1} and \eqref{eq:neymanpearson2}.
+
+\end{enumerate}
+
+\paragraph{Monotonic likelihood ratio}
+for a family $P = \{ f_\theta : \theta \in \Theta \}$ exists if there is a statistic $T$
+such that $\frac{ p_{\theta_1}(X) }{ p_{\theta_0}(X) }$ for $\theta_1 > \theta_0$ is a nondecreasing
+function of $T(X)$.
+
+\paragraph{Karlin-Rubin theorem}
+let $P = \left\{ f_\theta : \theta \in \Theta \right\}$ denote a family with the monotonic
+likelihood ratio with respect to statistic $T$. Consider the hypothesis $H: \theta \leq \theta_0$
+against $K: \theta > \theta_0$. Then, for any $\alpha \in (0,1)$ there exists the U.M.P.T on the
+significance level $\alpha$ of the form:
+\begin{gather*}
+\psi(\sample) = \begin{cases}
+1 \mbox{ if } T(\sample) > C_\alpha \\
+0 \mbox{ otherwise}
+\end{cases}
+\end{gather*}
+
+\paragraph{Unbiasedness of a hypothesis test}
+is determined by checking if for a test $\psi$ the following holds:
+\begin{gather*}
+\begin{cases}
+\forall \theta \in \Theta_H : \mathbb{E}_\theta \psi(X) \leq \alpha \\
+\forall \theta \in \Theta_K : \mathbb{E}_\theta \psi(X) \geq \alpha
+\end{cases}
+\end{gather*}
+
+\paragraph{Consistent hypothesis test}
+is such test for H against K, for which the following holds:
+\begin{gather*}
+\forall \theta \in \Theta_K \limit{n}{\infty} \mathbb{E}_\theta \psi(\sample) = 1
+\end{gather*}
+
+\paragraph{Two categories}
+of hypothesis tests are: parametric and non-parametric.
+
+\paragraph{Parametric test}
+is a test, in which we have parameters that uniquely define the distribution to which the sample
+under study belongs.
+
+\paragraph{Non-parametric statistical test}
+is a test that does not assume that sample belongs to any specific distribution. Such test is also
+called a distribution-free test.
+
+\paragraph{p-value}
+is an indicator for rejection or acceptance of null hypothesis. When it is not smaller than
+significance level of the test, we accept our hypothesis.

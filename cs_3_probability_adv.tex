@@ -1,0 +1,67 @@
+\paragraph{Empirical distribution function} (shortly e.d.f.)
+based on a sample $X = \sample$ is a function:
+%Empirical distribution function:
+%\[ \hat{F_n}(t; X_1, \ldots , X_n) = \frac{1}{n} \Sigma_{i=1}^n I_{(-\infty,t]} (X_i)
+%\; , \; t \in R \]
+\[ \hat{F}_n(x) = \frac{\#\{i: X_i \leq x\}}{n} \mbox{ or, defined in other way:} \]
+\[ \hat{F}_n(x) = \frac{1}{n} \sum_{i=1}^{n} I_{(-\infty,x]} (X_i) 
+\mbox{ , where }
+I_n(x) = \begin{cases} 1 \mbox{ if } x \in A \\ 0 \mbox{ otherwise} \end{cases} \]
+
+The e.d.f. is a cumulative distribution function based not no the whole population, but only the sample.
+
+\paragraph{Glivenko cantelli lemma}
+
+Let $\sample$ i.i.d. $F$ and let $\hat{F}_n$ denote the empirical distribution
+function based on this sample. Then:
+\[  P ( \lim_{n \rightarrow \infty}  \sup_{x \in R} | \hat{F}_n(x) - F(x) | = 0 ) = 1 \]
+
+This lemma tells us that when sample size is tending to infinity, then the maximum difference
+between e.d.f. and cumulative d.f. of the whole population will tend to zero.
+
+\paragraph{Statistical space}
+\[  \statspace \]
+\noindent where:
+\begin{itemize}[noitemsep,nolistsep]
+  \item $\mathcal{H}$ is sample space
+  
+  \item $\mathcal{A}$ is $\sigma$-algebra of $\mathcal{H}$
+  
+  \item $\mathcal{P}$ is a family of distributions
+  
+  \item $\theta$ is value of the parameter
+  
+  \item $\Theta$ is family of parameters
+\end{itemize}
+
+\paragraph{Sufficient statistic}
+is a such statistic that is guaranteed to get us as much information as any statistic based on at
+most the same sample size.
+
+A statistic is said to be sufficient for the parameter $\param$ (for a family $\mathcal{P}$) iff the
+conditional probability (given below) does not depend on $\param$ for any value $t$ on statistic
+$T$.
+\begin{gather*}
+\Pr(X=x|T(X)=t,\theta) = \Pr(X=x|T(X)=t)\\
+\Pr(x|t,\theta) = \Pr(x|t)
+\end{gather*}
+
+%\[ \]
+
+\paragraph{Factorization criteria}
+states that a statistic $T$ is sufficient iff $\exists$ the following factorization:
+\[ p_\param(\sample) = g_\param(T(\sample)) h(\sample) \]
+\noindent where:
+\begin{itemize}[noitemsep,nolistsep]
+  \item $p_\param$ is a distribution under study
+  
+  \item $g$ depends on $\param$ and a sample but only through $T$
+  
+  \item $h$ is independent of $\theta$
+\end{itemize}
+
+\paragraph{Family of k-parametric exponential distributions}
+contains those distributions that satisfy the following:
+\[ p_\theta(x) = h(x) \exp{ \left\{ \sum_{j=1}^k C_j(\theta)S_j(x) + B(\theta) \right\}  } \]
+
+where $S_1, \ldots, S_k$ are linearly independent.

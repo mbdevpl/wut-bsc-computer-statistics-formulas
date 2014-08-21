@@ -1,0 +1,245 @@
+\paragraph{\underline{Hypothesis tests for the mean}}
+$\mu$
+
+\vspace{5pt}
+\noindent \textbf{One-sample z-test}
+$H_0: \mu=\mu_0$
+
+We use it to check hypothesis that mean $\mu$ is equal to the specific value $\mu_0$. Critical
+region is: $ \mathcal{K}_\alpha = (-\infty, k] \cup [k, +\infty) $
+
+\vspace{5pt}
+\textbf{\em Model 1}:
+$X$ i.i.d. $\distnormal(\mu, \sigma)$, known $\sigma$
+
+\vspace{-15pt}
+\begin{gather*}
+T=\frac{\bar{X}-\mu_0}{\sigma}\sqrt{n} 
+\overset{H_0}{\longrightarrow} \distnormal(0,1)
+\end{gather*}
+
+\vspace{-20pt}
+\begin{gather*}
+k = z_{1-\frac{\alpha}{2}}
+\end{gather*}
+
+\textbf{\em Model 2}:
+$X$ i.i.d. ?, large $n$
+
+\vspace{-15pt}
+\begin{gather*}
+T=\frac{\bar{X}-\mu_0}{s_X}\sqrt{n} 
+\overset{H_0}{\underset{n \rightarrow \infty}{\longrightarrow}} \distnormal(0,1)
+\end{gather*}
+
+\vspace{-15pt}
+\begin{gather*}
+k = \diststudentt^{[n-1]}_{1-\frac{\alpha}{2}}
+\end{gather*}
+
+\noindent \textbf{One-sample t-test}
+$X$ i.i.d. $\distnormal(\mu, \sigma)$, $\sigma=?$, $H_0: \mu=\mu_0$
+
+\vspace{-15pt}
+\begin{gather*}
+z=\frac{\bar{X}-\mu_0}{s_X}\sqrt{n} 
+\overset{H_0}{\longrightarrow} \diststudentt^{[n-1]}
+\end{gather*}
+
+\vspace{-15pt}
+\begin{gather*}
+k = z_{1-\frac{\alpha}{2}}
+\end{gather*}
+
+\noindent \textbf{Two-sample z-test}
+
+We use it to check a hypothesis that means of two samples are equal. The test can be applied in
+following 2 cases:
+
+\vspace{10pt}
+\textbf{\em Model 1}:
+$X$, $Y$ i.i.d. $\distnormal(\mu_{X,Y}, \sigma_{X,Y})$,
+
+known $\sigma_X$ and $\sigma_Y$, $H_0: \mu_X=\mu_Y$
+
+\vspace{-15pt}
+\begin{gather*}
+a_I=\frac{\sigma_I^2}{n_I} \;,\;
+z=\frac{\bar{X}-\bar{Y}}{ \sqrt{a_X+a_Y} }
+\longrightarrow \distnormal(0,1)
+\end{gather*}
+
+\textbf{\em Model 2}:
+$X$, $Y$ i.i.d. ?, large $n_{X,Y}$,
+
+$H_0: \mu_X=\mu_Y$
+
+\vspace{-15pt}
+\begin{gather*}
+a_I=\frac{s_X^2}{n_X} \;,\;
+z=\frac{\bar{X}-\bar{Y}}{ \sqrt{a_X+a_Y} }
+\underset{n \rightarrow \infty}{\longrightarrow} \distnormal(0,1)
+\end{gather*}
+
+\noindent \textbf{Two-sample t-test}
+
+\vspace{10pt}
+\textbf{\em Model 1}:
+$X$, $Y$ i.i.d. $\distnormal(\mu_{X,Y}, \sigma_{X,Y})$, 
+
+$\sigma_X=\sigma_Y=?$, $H_0: \mu_X=\mu_Y$, 
+$d = n_X+n_Y-2$, $a_i = (n_i - 1)s_i^2$
+
+\vspace{-15pt}
+\begin{gather*}
+\dot{s}^2 = \frac{a_X + a_Y}{d} \;,\; 
+b_I=\frac{\dot{s}^2}{n_I}
+\end{gather*}
+
+\[ t=\frac{\bar{X}-\bar{Y}}{ \sqrt{b_X+b_Y} }
+\overset{H_0}{\longrightarrow} \diststudentt^{[d]} \]
+
+\textbf{\em Model 2}:
+$X$, $Y$ i.i.d. $N(\mu_{X,Y}, \sigma_{X,Y})$, 
+
+$\sigma_X=?$ and $\sigma_Y=?$, $H_0: \mu_X=\mu_Y$
+
+\vspace{-15pt}
+\begin{gather*}
+a_i = \frac{s_i^2}{n_i} \;,\;
+d = \frac{(a_X + a_Y)^2}{ \frac{a_X^2}{n_X-1}+\frac{a_Y^2}{n_Y-1} }
+\end{gather*}
+
+\vspace{-15pt}
+\begin{gather*}
+t=\frac{\bar{X}-\bar{Y}}{ \sqrt{ a_X + a_Y } }
+\overset{H_0}{\longrightarrow} \diststudentt^{[d]}
+\end{gather*}
+
+\vfill
+\columnbreak
+
+\noindent \textbf{Paired t-test}
+$X$, $Y$ i.i.d. $\distnormal(\mu_{X,Y}, \sigma_{X,Y})$, 
+
+$\sigma_X=?$ and $\sigma_Y=?$, $H_0: \mu_X=\mu_Y$, 
+
+$\forall i: (X_i,Y_i)$ are dep., $Z=X-Y$
+
+\vspace{-15pt}
+\begin{gather*}
+t= \frac{\bar{Z}-0}{s_Z}\sqrt{n} 
+\overset{H_0}{\longrightarrow} \diststudentt^{[n-1]}
+\end{gather*}
+
+It is usually used when identical samples are taken at two points in time, and we wish to check
+whether there are significant differences between them.
+
+\paragraph{\underline{Hypothesis tests for variance}}
+$\sigma^2$
+
+\vspace{5pt}
+\noindent \textbf{One-sample test}
+$X$ i.i.d. $\distnormal(\mu, \sigma)$, $H_0: \sigma^2=\sigma_0^2$
+
+We use this test to test a hypothesis that $\sigma^2$ is equal to a specific value $\sigma_0^2$.
+$ \mathcal{K}_\alpha = (0, \distchisquare_{k, \frac{\alpha}{2}}] \cup [\distchisquare_{k, 1-\frac{\alpha}{2}}, +\infty) $
+
+\vspace{5pt}
+\textbf{\em Model 1}:
+known $\mu$
+
+\vspace{-15pt}
+\begin{gather*}
+T = \frac{n s_X^2}{\sigma_0^2}
+\overset{H_0}{\longrightarrow} \distchisquare_{n-1}
+\end{gather*}
+
+\vspace{-15pt}
+\begin{gather*}
+k = n
+\end{gather*}
+
+\textbf{\em Model 2}:
+$\mu=?$
+
+\vspace{-15pt}
+\begin{gather*}
+T = \frac{(n-1)s_X^2}{\sigma_0^2}
+\overset{H_0}{\longrightarrow} \distchisquare_{n-1}
+\end{gather*}
+
+\vspace{-15pt}
+\begin{gather*}
+k = n-1
+\end{gather*}
+
+\noindent \textbf{F-test}
+$X$, $Y$ i.i.d. $\distnormal(\mu_{X,Y}, \sigma_{X,Y})$, 
+
+$\mu_X=?$ and $\mu_Y=?$, $H_0: \sigma_X^2=\sigma_Y^2$
+
+We use this test to test a hypothesis that two variances $\sigma_X^2$ and $\sigma_Y^2$ (for samples
+$X$ and $Y$ respectively) are equal.
+
+\vspace{-15pt}
+\begin{gather*}
+F = \frac{s_X^2}{s_Y^2} \overset{H_0}{\longrightarrow} \distf^{[n_1-1,n_2-2]}
+\end{gather*}
+
+\paragraph{\underline{Hypothesis tests for proportion}} $p$
+
+\vspace{5pt}
+\noindent \textbf{One-sample z-test}
+$X$ i.i.d. $Bern(p)$, $H_0: p=p_0$
+
+We use this test to test a hypothesis that $p$ is equal to a specific value $p_0$. It applies to two
+such models:
+
+\vspace{10pt}
+\textbf{\em Model 1}:
+$n_{X,Y}\geq100$
+
+\vspace{-15pt}
+\begin{gather*}
+z=\frac{\hat{p}-p_0}{\sqrt{p_0(1-p_0)}}\sqrt{n}
+\overset{H_0}{\underset{n \rightarrow \infty}{\longrightarrow}} \distnormal(0,1)
+\end{gather*}
+
+\textbf{\em Model 2}:
+$n_{X,Y}<100$, $A = \arcsin$
+
+\vspace{-15pt}
+\begin{gather*}
+z=2\left(A{\sqrt{\hat{p}}}-A{\sqrt{p_0}} \right)\sqrt{n}
+\longrightarrow \distnormal(0,1)
+\end{gather*}
+
+\noindent \textbf{Two-sample z-test}
+$X$, $Y$ i.i.d. $\distbernoulli(p_{X,Y})$, $H_0: p_X=p_Y$
+
+We use this test to test a hypothesis that parameters $p_X$ and $p_Y$ (which are empirical success
+rates for samples $X$ and $Y$ respectively) are equal. It applies to two such models:
+
+\vspace{10pt}
+\textbf{\em Model 1}:
+$n_{X,Y}\geq100$, $ k_I = \Sigma_{i=1}^{n_I} I_i $
+
+$ \dot{p}=\frac{k_X+k_Y}{n_X+n_Y} \mbox{ , } \dot{n}=\frac{n_X n_Y}{n_X+n_Y} $
+
+\vspace{-15pt}
+\begin{gather*}
+z=\frac{\hat{p_X}-\hat{p_Y}}{\sqrt{\dot{p}(1-\dot{p})}}\sqrt{\dot{n}}
+\underset{n_{X,Y} \rightarrow \infty}{\longrightarrow} \distnormal(0,1)
+\end{gather*}
+
+\textbf{\em Model 2}:
+$n_{X,Y}<100$, $A \equiv \arcsin$
+
+\vspace{-15pt}
+\begin{gather*}
+z=2\left(A{\sqrt{\hat{p_X}}}-A{\sqrt{\hat{p_Y}}} \right)\sqrt{\dot{n}}
+\longrightarrow \distnormal(0,1)
+\end{gather*}
+
+\vfill

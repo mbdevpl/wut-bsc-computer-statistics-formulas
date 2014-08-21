@@ -1,0 +1,46 @@
+\paragraph{\underline{Conf. intervals for the mean}}
+$\mu$ \hspace{0pt} \newline
+Conf. interval: $ \left( \mean - k, \mean + k \right) $
+
+\vspace{5pt} \noindent \textbf{\em Model 1}:
+$X$ i.i.d. $\distnormal(\mu, \sigma)$, known $\sigma$
+\[ k = z_{1-\alpha/2}\frac{\sigma}{\sqrt{n}} \]
+
+\noindent \textbf{\em Model 2}:
+$X$ i.i.d. $\distnormal(\mu, \sigma)$, $\sigma=?$
+\[ k = \diststudentt^{[n-1]}_{1-\alpha/2}\frac{s_X}{\sqrt{n}} \]
+
+\noindent \textbf{\em Model 3}:
+$X$ i.i.d. ?, large $n$
+\[ k = z_{1-\alpha/2}\frac{s_X}{\sqrt{n}} \]
+
+\paragraph{\underline{Conf. intervals for variance}}
+$\sigma^2$ \hspace{0pt} \newline
+or $\var X$ are, in case of first 2 models, defined as:
+\[ \left( f(1-\alpha/2), f(\alpha/2) \right) \]
+and $f(k)$ is defined for each. The third model has its own definition.
+
+\vspace{5pt} \noindent \textbf{\em Model 1}:
+$X$ i.i.d. $\distnormal(\mu, \sigma)$, known $\mu$
+\[ f(k) = \frac{n\tilde{s}_X^2}{\distchisquare_{k,n}} \]
+
+\noindent \textbf{\em Model 2}:
+$X$ i.i.d. $\distnormal(\mu, \sigma)$, $\mu=?$
+\[ f(k) = \frac{(n-1)\tilde{s}_X^2}{\distchisquare_{k,n-1}} \]
+
+\noindent \textbf{\em Model 3}:
+$X$ i.i.d. ?, large $n$,
+
+Conf. interval: $ \left( f(-1) , f(1) \right) $
+\[ f(k) = \frac{(2n-2)\tilde{s}_X^2}{\sqrt{2n-3} + (k)z_{1-\alpha/2}} \]
+
+\paragraph{\underline{Conf. interval for proportion}}
+$p$ \hspace{0pt} \newline
+i.e. probability of success.
+
+\vspace{5pt} \noindent \textbf{\em Model 1}:
+$X$ i.i.d. $\distbernoulli(p)$, large $n$
+
+Conf. interval: $ \left( \hat{p}-l , \hat{p}+l \right) $
+\[ \hat{p} = \frac{1}{n} \sum_{i=1}^n X_i \mbox{ and }
+l = z_{1-\frac{\alpha}{2}}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}} \]

@@ -1,0 +1,123 @@
+\paragraph{\underline{Discrete}} \hspace{0pt}
+
+\vspace{10pt} \noindent \textbf{Bernoulli}
+$ X \sim \distbernoulli(p) $, $0 < p < 1$
+
+$p$: probability of success
+\begin{gather*}
+P(X=1)=p \\ %\mbox{ , }
+P(X=0)=1-p
+\end{gather*}
+
+$ \mathbb{E}X = p$, $\var X = p(1-p) $
+
+\vspace{10pt} \noindent \textbf{Binomial}
+$X \sim \distbinomial(n,p)$, $n \in \mathbb{N}_+$, $0 < p < 1$
+
+$n$: number of tests/trials ($\distbinomial(1,p) \equiv \distbernoulli(p)$)
+
+$p$: probability of success
+\begin{gather*}
+P(x=k) = \binom{n}{k} p^k(1-p)^{n-k}
+\end{gather*}
+
+$ \mathbb{E}X = np$, $\var X = np(1-p) $
+
+\vspace{10pt} \noindent \textbf{Poison}
+$X \sim \distpoisson(\lambda)$, $\lambda > 0$
+
+In some sense, it's a generalization of the Binomial distribution.
+\begin{gather*}
+P(X=k) = \frac{\lambda^k}{k!}e^{-\lambda} \mbox{ , } k = 0,1,2,\ldots
+\end{gather*}
+
+$ \mathbb{E}X = \lambda$, $\var X = \lambda $
+
+\vspace{10pt} \noindent \textbf{Geometric}
+$X \sim \distgeometric(p)$
+\begin{gather*}
+P(X=k) = (1-p)^{k-1}p
+\end{gather*}
+
+if $k=1,2,\ldots$ then $\mathbb{E}X = \frac{1}{p}$, $\var X = \frac{1-p}{p^2}$
+
+if $k=0,1,2,\ldots$ then $\mathbb{E}X = \frac{1-p}{p}$, $\var X = \frac{1-p}{p^2}$
+
+\vspace{10pt} \noindent \textbf{Hypergeometric}
+$X \sim \disthypergeometric(N,M,n)$
+\begin{gather*}
+P(X=k) \frac{ \binom{M}{k} \binom{N-M}{n-k} }{ \binom{N}{n} }
+\end{gather*}
+
+$ \max\{ 0, M-N+n \} \leq  k \leq \min\{ n, M \} $
+
+\vfill
+\columnbreak
+
+\paragraph{\underline{Continuous}} \hspace{0pt}
+
+\vspace{10pt} \noindent \textbf{Uniform}
+$X \sim \distuniform[a,b]$, $a,b \in R$, $a < b$
+
+$a$: lower limit
+
+$b$: upper limit
+\begin{gather*}
+f(x) = \begin{cases}
+\frac{1}{b-a} \mbox{ if } x \in [a,b] \\
+0 \mbox{ otherwise}
+\end{cases} 
+= \frac{1}{b-a} I_{[a,b]}(x)
+\end{gather*}
+
+$ \mathbb{E}X = \frac{a+b}{2}$, $\var X = \frac{(b-a)^2}{12} $
+
+\vspace{10pt} \noindent \textbf{Normal}
+$X \sim \distnormal(\mu, \sigma)$
+
+$\mu$: mean
+
+$\sigma$: standard deviation
+\begin{gather*}
+f(x) = \frac{1}{\sqrt{2\pi} \sigma} \exp{ \left\{ - \frac{(X-\mu)^2}{2 \sigma^2} \right\} }
+\end{gather*}
+
+$ \mathbb{E}X = \mu$, $\var X = \sigma^2$
+
+\vspace{10pt} \noindent \textbf{Exponential}
+$X \sim \distexponential(\lambda)$, $\lambda > 0$
+
+decreasing \eqref{eq:expdecreasing} and increasing \eqref{eq:expincreasing}:
+\begin{gather*}
+f(x) = \lambda e^{-\lambda x}
+\label{eq:expdecreasing} \tag{a}
+\end{gather*}
+
+\vspace{-30pt} \begin{gather*}
+f(x) = 1 - e^{-\lambda x}
+\label{eq:expincreasing} \tag{b}
+\end{gather*}
+
+\vspace{10pt} \noindent \textbf{Gamma}
+$X \sim \distgamma(\alpha, \beta)$, $\alpha, \beta > 0$
+
+\nodata
+
+\vspace{10pt} \noindent \textbf{Chi-square}
+$X \sim \distchisquare_n$
+
+$n$: number of degrees of freedom
+
+\vspace{10pt} \noindent \textbf{Student's t-distribution}
+$X \sim \diststudentt^{[n]}$
+
+$n$: number of degrees of freedom
+
+Also known as simply t-distribution.
+
+\vspace{10pt} \noindent \textbf{F-distribution}
+$X \sim \distf^{[n]}$
+
+$n$: number of degrees of freedom
+
+Also known as Fisher-Snedecor distribution.

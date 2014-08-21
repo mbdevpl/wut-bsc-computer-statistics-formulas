@@ -1,0 +1,55 @@
+\paragraph{Quantiles}
+are points taken at regular intervals from the cumulative distribution function.
+
+% \noindent
+Quantiles have two equivalent notations:
+\begin{itemize}[noitemsep,nolistsep]
+
+  \item Not parametrized, $p$th quantile is equivalent to argument value for which c.d.f. has value
+  $p$, where $p \in \mathbb{R} \cap [0,1]$.
+
+  \item Parametrized with number of intervals equal $q$, these are called q-quantiles. For each $q$, there
+  are $q-1$ q-quantiles: $\qquantile{1}$, $\qquantile{2}$, \ldots , $\qquantile{q}$.
+
+\end{itemize}
+
+\vspace{-10pt}
+\begin{gather*}
+\quantile{q}{k} \equiv \qqquantile{k/q}
+\end{gather*}
+
+Quantiles of Standard Normal distribution ($\distnormal(0,1)$) are denoted by $z$, for example: $z_{0.5}$ is a median of $\distnormal(0,1)$ 
+
+\paragraph{Quartiles}
+are 4-quantiles. They are denoted as follows: 
+
+$Q_1 \equiv \quantile{4}{1} \equiv \qqquantile{0.25}$
+
+$Q_2 \equiv \quantile{4}{2} \equiv \qqquantile{0.5} \equiv \med$
+
+$Q_3 \equiv \quantile{4}{3} \equiv \qqquantile{0.75}$
+
+\paragraph{Deciles}
+are 10-quantiles, denoted by $D_1, \ldots , D_9$.
+
+\paragraph{Percentiles}
+are 100-quantiles, denoted by $P_{1}, \ldots , P_{99}$.
+
+% \begin{align*}
+% \textrm{Median: } & Med = 
+% \left\{ \begin{array}{cc}
+% \textrm{odd }n\textrm{: } & x_{\frac{n+1}{2}} \\ %(n+1)/2  n/2  n/2 + 1
+% \textrm{even }n\textrm{: } & \frac{1}{2} \left( x_{\frac{n}{2} } + x_{\frac{n}{2}+1} \right)
+% \end{array} \right\} \\
+% \textrm{Mode: } & \textrm{observation that appears most often} \\
+% \textrm{Quantiles: } & \ldots
+% \end{align*}
+
+% \subsubsection{Means}
+% \begin{align*}
+% \textrm{Average: } & \bar{x} = \frac{1}{n}\sum_{i=1}^n x_i \\
+% \textrm{Trimmed: } & \sum_{i=1}^n \ldots \\
+% \textrm{Windsorized: } & \sum_{i=1}^n \ldots \\
+% \textrm{Geometrical: } & \ldots \\
+% \textrm{Harmonic: } & \ldots
+% \end{align*}

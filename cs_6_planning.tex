@@ -1,0 +1,14 @@
+\paragraph{Two stage sampling procedure}
+called Stein's sampling procedure:
+\begin{enumerate}
+  \item take a preliminary sample of small size $n_0$
+  
+  $x_1, \ldots, x_{n_0} \rightarrow X_0 \ \longrightarrow \ s^2_0 \rightarrow s_0$
+  
+  \item estimate how many more measurements you need:
+  \begin{gather*}
+  n = \lceil \left( \diststudentt^{[n_0-1]}_{1-\alpha/2} \frac{s_0}{d} \right) \rceil
+  \end{gather*}
+  if $n > n_0$ then take the second sample of size $n-n_0$
+  
+\end{enumerate}
